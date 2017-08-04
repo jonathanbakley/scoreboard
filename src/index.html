@@ -1,20 +1,30 @@
 <!doctype html>
 <html lang="en">
 <head>
+
+  <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBwNoidBfQJLEv4cAwZU8qDwuuT0sAInvE",
+      authDomain: "scoreboard-cb865.firebaseapp.com",
+      databaseURL: "https://scoreboard-cb865.firebaseio.com",
+      projectId: "scoreboard-cb865",
+      storageBucket: "",
+      messagingSenderId: "837871405516"
+    };
+    firebase.initializeApp(config);
+  </script>
+
   <meta charset="utf-8">
   <title>ScoreboardApp</title>
   <base href="/">
-
-  <link rel="stylesheet" href="path/to/node_modules/clarity-ui/clarity-ui.min.css">
-  <link rel="stylesheet" href="path/to/node_modules/clarity-icons/clarity-icons.min.css">
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
   <app-root>
-
-    <script src="path/to/node_modules/clarity-icons/clarity-icons.min.js"></script>
 
   </app-root>
 </body>

@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-lg-5 col-md-8 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="card-header">
+                {{userType}}
+            </div>
+            <div class="card-block">  
+                <div *ngIf="userType=='Create Account'" class="card-text">
+                  <app-new-user-form></app-new-user-form>
+                </div>
+                <div *ngIf="userType=='Login'" class="card-text">
+                  <app-existing-user-form></app-existing-user-form>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-sm btn-link" (click)="changeUserType('newUser')">New User</button>
+                <button class="btn btn-sm btn-link" (click)="changeUserType('existingUser')">Existing User</button>
+            </div>
+        </div>
+    </div>
+</div>
