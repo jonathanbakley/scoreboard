@@ -2,17 +2,17 @@
     <section class="form-block">
         <div class="form-group">
             <label for="formFields_1">Email:</label>
-            <input type="text" id="formFields_1" placeholder="Email" size="35">
+            <input #email type="text" id="formFields_1" placeholder="Email" size="35">
         </div>
         <div class="form-group">
             <label for="formFields_2">Username:</label>
-            <input type="text" id="formFields_2" placeholder="Username" size="35">
+            <input #username type="text" id="formFields_2" placeholder="Username" size="35">
         </div>
         <div class="form-group">
             <label for="formFields_7">Password:</label>
             <input type="password" id="formFields_7" placeholder="Password">
-            <input type="password" id="formFields_8" placeholder="Confirm Password">
+            <input type="password" id="formFields_8" placeholder="Confirm Password" #password>
         </div>
     </section>
 </form>
-<button class="btn btn-primary">Create Account</button><!--Add *ngIf="validate all fields"-->
+<button class="btn btn-primary" (click)="createUser(email.value, password.value)">Create Account</button><!--Add *ngIf="validate all fields"-->

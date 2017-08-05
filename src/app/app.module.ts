@@ -8,6 +8,7 @@ import { MainTableComponent } from './main-table/main-table.component';
 import { LoginCardComponent } from './login-card/login-card.component';
 import { NewUserFormComponent } from './new-user-form/new-user-form.component';
 import { ExistingUserFormComponent } from './existing-user-form/existing-user-form.component';
+import { AngularFireAuth } from "angularfire2/auth";
 
 
     // Initialize Firebase
@@ -33,7 +34,9 @@ import { ExistingUserFormComponent } from './existing-user-form/existing-user-fo
     ClarityModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig)
   ],
-  providers: [],
+  providers: [
+    AngularFireAuth
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
