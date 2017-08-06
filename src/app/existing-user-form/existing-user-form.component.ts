@@ -28,4 +28,8 @@ export class ExistingUserFormComponent implements OnInit {
       // ...
     });
   }
+
+  logout() {
+    this.afAuth.auth.signOut();
+  }
 }

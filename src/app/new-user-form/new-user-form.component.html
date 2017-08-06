@@ -10,9 +10,10 @@
         </div>
         <div class="form-group">
             <label for="formFields_7">Password:</label>
-            <input type="password" id="formFields_7" placeholder="Password">
-            <input type="password" id="formFields_8" placeholder="Confirm Password" #password>
+            <input #password2 type="password" id="formFields_7" placeholder="Password">
+            <input #password type="password" id="formFields_8" placeholder="Confirm Password">
         </div>
     </section>
 </form>
-<button class="btn btn-primary" (click)="createUser(email.value, password.value)">Create Account</button><!--Add *ngIf="validate all fields"-->
+<button class="btn btn-primary" (click)="createUser(email.value, password.value, password2.value, username.value)">Create Account</button><!--Add *ngIf="validate all fields"-->
+<button class="btn btn-primary" (click)="checkUser()">Check User</button>

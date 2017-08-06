@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ClarityModule } from 'clarity-angular';
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { AppComponent } from './app.component';
 import { MainTableComponent } from './main-table/main-table.component';
@@ -32,7 +33,8 @@ import { AngularFireAuth } from "angularfire2/auth";
   imports: [
     BrowserModule,
     ClarityModule.forRoot(),
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule
   ],
   providers: [
     AngularFireAuth
