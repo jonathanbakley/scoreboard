@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase/app';
+import { User } from './user.model';
 
 @Component({
   selector: 'app-new-user-form',
@@ -12,13 +13,13 @@ import * as firebase from 'firebase/app';
   providers: [AngularFireAuth]
 })
 export class NewUserFormComponent implements OnInit {
-
+   users: FirebaseListObservable<any[]>;
    verifiedEmail: string;
    verifiedPassword: string;
    enteredEmail: string;
    enteredPassword: string;
    user: Observable<firebase.User>;
-   users: FirebaseListObservable<any[]>;
+   //users: FirebaseListObservable<any[]>;
    values = '';
    currentUser: any;
 
@@ -29,7 +30,8 @@ export class NewUserFormComponent implements OnInit {
         limitToLast: 50
       }
     });
-   }
+    this.users.push({ email: "testEmail", username: "testUsername", password: "password", wins: 0, loses: 0, ties: 0 });
+  }
 
   ngOnInit() {
   }
@@ -43,7 +45,8 @@ export class NewUserFormComponent implements OnInit {
       var errorMessage = error.message;
     });
     //push users info to database
-    this.users.push({ Email: email, Username: username, Wins: 0, Loses: 0, Ties: 0 });
+    this.users.push({ email: email, username: username, password: "password", wins: 0, loses: 0, ties: 0 });
+    
   }
 
   checkUser(){
@@ -56,5 +59,17 @@ export class NewUserFormComponent implements OnInit {
       console.log("NO USER LOGGED IN");
     }
   }
+
+  // define our app and dependencies (remember to include firebase!)
+  //app = angular.module("sampleApp", ["firebase"]);
+  // inject $firebaseObject into our controller
+  //app.controller("ProfileCtrl", ["$scope", $firebaseObject",
+  //  function($scope, $firebaseObject) {
+  //    var ref = new Firebase("https://<YOUR-FIREBASE-APP>.firebaseio.com");
+      // download physicsmarie's profile data into a local object
+      // all server changes are applied in realtime
+  //    $scope.profile = $firebaseObject(ref.child('profiles').child('physicsmarie'));
+  //  }
+  //]);
 
 }

@@ -17,3 +17,5 @@
 </form>
 <button class="btn btn-primary" (click)="createUser(email.value, password.value, password2.value, username.value)">Create Account</button><!--Add *ngIf="validate all fields"-->
 <button class="btn btn-primary" (click)="checkUser()">Check User</button>
+
+<app-main-table [usersFirebase]="users" class="login-card"></app-main-table>
